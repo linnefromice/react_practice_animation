@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
 import { useSpring, animated } from "react-spring";
+import { Keyframes } from "react-spring/renderprops";
 
-function App() {
+const Container = Keyframes.Spring(async next => {
+  while (true) {
+    await next({
+      from: { radians: 150 },
+      to: { radians: 210 },
+    })
+    await next({
+      from: { radians: 210 },
+      to: { radians: 150 },
+    })
+  }
+})
+
+function _App() {
   const [on, toggle] = useState(false);
 
   const propsOne = useSpring({opacity: 1, from: {opacity: 0}});
@@ -46,8 +60,7 @@ function App() {
   });
   
   return (
-    <div className="App">
-      
+    <div style={{ background: `linear-gradient(180deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>
       <center>
         <animated.h1 style={propsOne}>I Will Fade In</animated.h1>
         <animated.div style={propsTwo}>
@@ -68,6 +81,17 @@ function App() {
         </div>
       </center>
     </div>
+  );
+}
+
+function App() {
+  return (
+
+    <Container
+      reset
+      config={{ duration: 10000 }}>
+      {styles => <div style={{ width: 800, height: 400, background: `linear-gradient(${styles.radians}deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>Hello World</div>}
+    </Container>
   );
 }
 
