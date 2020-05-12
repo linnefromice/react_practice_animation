@@ -14,16 +14,24 @@ function App() {
       height: 0,
     }
   });
+  const propsThree = useSpring({
+    from: { number: 0 },
+    to: { number: 10.0 }
+  })
 
   return (
     <div className="App">
+      
       <center>
         <animated.div style={propsOne}>
           I Will Fade In
         </animated.div>
         <animated.div style={propsTwo}>
           <div>Blue</div>
-          <div> Circle</div>
+          <div>Circle</div>
+        </animated.div>
+        <animated.div>
+          {propsThree.number}
         </animated.div>
       </center>
     </div>
@@ -31,3 +39,9 @@ function App() {
 }
 
 export default App;
+
+/*
+<animated.svg width="400" height="200" viewBox="0 0 400 200">
+        <path d={waveLinePath} width="400" height="200" viewBox="0 0 400 200"/>
+      </animated.svg>
+      */
