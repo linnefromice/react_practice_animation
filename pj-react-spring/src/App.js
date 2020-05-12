@@ -37,8 +37,12 @@ function App() {
       { opacity: 0, color: 'gray' },
     ],
   });
-  const clickAnimation = useSpring({
-    color: on ? 'blue' : 'red'
+  const { xy, c } = useSpring({
+    from: { xy: [0, 0], c: 'green'},
+    to: {
+      xy: on ? [400, 200] : [0, 0],
+      c: on ? 'red' : 'green',
+    }
   });
   
   return (
@@ -54,7 +58,12 @@ function App() {
         <animated.div style={propsFour}>I Will Fade In</animated.div>
         <animated.h1 style={multiAnimation}>Hello World...</animated.h1>
         <div>
-          <animated.h1 style={clickAnimation}>{!on ? "I'm red" : "Now I'm blue"}</animated.h1>
+          <animated.h1
+            style={{
+              transform: xy.interpolate((x, y) => `translate(${x}px, ${y}px)`),
+              color: c.interpolate(c => c)}}>
+                {!on ? "I'm here" : "Now I'm over here"}
+          </animated.h1>
           <button onClick={() => toggle(!on)}>Change</button>
         </div>
       </center>
