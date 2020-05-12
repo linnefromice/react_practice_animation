@@ -24,19 +24,30 @@ function App() {
       await next({opacity: 1, color: 'blue'});
       await next({opacity: 0, color: 'green'});
     },
-  })
+  });
+  const multiAnimation = useSpring({
+    from: { opacity: 0, color: 'red'},
+    to: [
+      { opacity: 1, color: '#ffaaee' },
+      { opacity: 1, color: 'red' },
+      { opacity: 0.5, color: '#008000' },
+      { opacity: 0.8, color: 'black' },
+      { opacity: 0, color: 'gray' },
+    ],
+  });
 
   return (
     <div className="App">
       
       <center>
-        <animated.div style={propsOne}>I Will Fade In</animated.div>
+        <animated.h1 style={propsOne}>I Will Fade In</animated.h1>
         <animated.div style={propsTwo}>
           <div>Blue</div>
           <div>Circle</div>
         </animated.div>
         <animated.div>{propsThree.number}</animated.div>
         <animated.div style={propsFour}>I Will Fade In</animated.div>
+        <animated.h1 style={multiAnimation}>Hello World...</animated.h1>
       </center>
     </div>
   );
