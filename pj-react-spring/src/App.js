@@ -4,16 +4,28 @@ import { useSpring, animated } from "react-spring";
 
 function App() {
   const propsOne = useSpring({opacity: 1, from: {opacity: 0}});
-  const propsTwo = useSpring({ x: 100, from: { x: 0 } })
+  const propsTwo = useSpring({
+    width: 80,
+    height: 80,
+    borderRadius: "50%",
+    backgroundColor: "blue",
+    from: {
+      width: 0,
+      height: 0,
+    }
+  });
 
   return (
     <div className="App">
-      <animated.div style={propsOne}>
-        I Will Fade In
-      </animated.div>
-      <animated.svg strokeDashoffset={propsTwo.x}>
-        <path d="./circle.svg" />
-      </animated.svg>
+      <center>
+        <animated.div style={propsOne}>
+          I Will Fade In
+        </animated.div>
+        <animated.div style={propsTwo}>
+          <div>Blue</div>
+          <div> Circle</div>
+        </animated.div>
+      </center>
     </div>
   );
 }
