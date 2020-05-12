@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { useSpring, animated } from "react-spring";
 
 function App() {
+  const [on, toggle] = useState(false);
+
   const propsOne = useSpring({opacity: 1, from: {opacity: 0}});
   const propsTwo = useSpring({
     width: 80,
@@ -35,7 +37,10 @@ function App() {
       { opacity: 0, color: 'gray' },
     ],
   });
-
+  const clickAnimation = useSpring({
+    color: on ? 'blue' : 'red'
+  });
+  
   return (
     <div className="App">
       
@@ -48,6 +53,10 @@ function App() {
         <animated.div>{propsThree.number}</animated.div>
         <animated.div style={propsFour}>I Will Fade In</animated.div>
         <animated.h1 style={multiAnimation}>Hello World...</animated.h1>
+        <div>
+          <animated.h1 style={clickAnimation}>{!on ? "I'm red" : "Now I'm blue"}</animated.h1>
+          <button onClick={() => toggle(!on)}>Change</button>
+        </div>
       </center>
     </div>
   );
