@@ -30,19 +30,13 @@ function App() {
     <div className="App">
       
       <center>
-        <animated.div style={propsOne}>
-          I Will Fade In
-        </animated.div>
+        <animated.div style={propsOne}>I Will Fade In</animated.div>
         <animated.div style={propsTwo}>
           <div>Blue</div>
           <div>Circle</div>
         </animated.div>
-        <animated.div>
-          {propsThree.number}
-        </animated.div>
-        <animated.div style={propsFour}>
-          I Will Fade In
-        </animated.div>
+        <animated.div>{propsThree.number}</animated.div>
+        <animated.div style={propsFour}>I Will Fade In</animated.div>
       </center>
     </div>
   );
