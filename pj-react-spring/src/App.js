@@ -17,6 +17,13 @@ function App() {
   const propsThree = useSpring({
     from: { number: 0 },
     to: { number: 10.0 }
+  });
+  const propsFour = useSpring({
+    from: {opacity: 0, color: 'red'},
+    to: async (next, cancel) => {
+      await next({opacity: 1, color: 'blue'});
+      await next({opacity: 0, color: 'green'});
+    },
   })
 
   return (
@@ -32,6 +39,9 @@ function App() {
         </animated.div>
         <animated.div>
           {propsThree.number}
+        </animated.div>
+        <animated.div style={propsFour}>
+          I Will Fade In
         </animated.div>
       </center>
     </div>
