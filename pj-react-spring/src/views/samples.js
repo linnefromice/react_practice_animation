@@ -70,6 +70,16 @@ function SampleFive() {
   );
 }
 
+function SampleSvgOne() {
+  const waveLinePath = "M0,0 v50 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-50 Z";
+
+  return (
+    <animated.svg width="400" height="200" viewBox="0 0 400 200">
+      <path d={waveLinePath} fill="#3eba90" width="400" height="200" viewBox="0 0 400 200"/>
+    </animated.svg>
+  );
+}
+
 function SampleToggleOne() {
   const [on, toggle] = useState(false);
   const props = useSpring({
@@ -101,5 +111,6 @@ export {
   SampleThree,
   SampleFour,
   SampleFive,
+  SampleSvgOne,
   SampleToggleOne
 };

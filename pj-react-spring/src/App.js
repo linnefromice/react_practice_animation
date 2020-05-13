@@ -32,9 +32,3 @@ function App() {
 }
 
 export default App;
-
-/*
-<animated.svg width="400" height="200" viewBox="0 0 400 200">
-        <path d={waveLinePath} width="400" height="200" viewBox="0 0 400 200"/>
-      </animated.svg>
-      */
