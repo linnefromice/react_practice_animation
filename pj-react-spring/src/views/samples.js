@@ -16,8 +16,8 @@ function SampleOne() {
 
 function SampleTwo() {
   const props = useSpring({
-    from: { width: 0, height: 0, borderRadius: "0%", backgroundColor: "white" },
-    to: { width: 80, height: 80, borderRadius: "50%", backgroundColor: "blue" }
+    from: { width: 0, height: 0, borderRadius: "0em", backgroundColor: "white" },
+    to: { width: 80, height: 80, borderRadius: "5em", backgroundColor: "blue" }
   });
 
   return (
@@ -31,7 +31,7 @@ function SampleTwo() {
 function SampleThree() {
   const props = useSpring({
     from: { number: 0 },
-    to: { number: 10.0 }
+    to: { number: 1 }
   });
 
   return (
@@ -39,4 +39,18 @@ function SampleThree() {
   );
 }
 
-export { SampleOne, SampleTwo, SampleThree };
+function SampleFour() {
+  const props = useSpring({
+    from: { opacity: 0, color: 'red' },
+    to: async (next, cancel) => {
+      await next({ opacity: 1, color: 'green' });
+      await next({ opacity: 0, color: 'purple' });
+    }
+  })
+
+  return (
+    <animated.div style={props}>I Will Fade In</animated.div>
+  );
+}
+
+export { SampleOne, SampleTwo, SampleThree, SampleFour };
