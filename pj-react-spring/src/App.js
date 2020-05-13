@@ -3,7 +3,7 @@ import './App.css';
 import { useSpring, animated } from "react-spring";
 import { Keyframes } from "react-spring/renderprops";
 
-import { SampleOne, SampleTwo, SampleThree, SampleFour } from './views/samples';
+import { SampleOne, SampleTwo, SampleThree, SampleFour, SampleFive } from './views/samples';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -21,16 +21,6 @@ const Container = Keyframes.Spring(async next => {
 function _App() {
   const [on, toggle] = useState(false);
 
-  const multiAnimation = useSpring({
-    from: { opacity: 0, color: 'red'},
-    to: [
-      { opacity: 1, color: '#ffaaee' },
-      { opacity: 1, color: 'red' },
-      { opacity: 0.5, color: '#008000' },
-      { opacity: 0.8, color: 'black' },
-      { opacity: 0, color: 'gray' },
-    ],
-  });
   const { xy, c } = useSpring({
     from: { xy: [0, 0], c: 'green'},
     to: {
@@ -42,7 +32,6 @@ function _App() {
   return (
     <div style={{ background: `linear-gradient(180deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>
       <center>
-        <animated.h1 style={multiAnimation}>Hello World...</animated.h1>
         <div>
           <animated.h1
             style={{
@@ -69,6 +58,7 @@ function App() {
             <SampleTwo/>
             <SampleThree/>
             <SampleFour/>
+            <SampleFive/>
           </center>
         </div>
       )}

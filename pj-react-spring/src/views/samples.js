@@ -53,4 +53,21 @@ function SampleFour() {
   );
 }
 
-export { SampleOne, SampleTwo, SampleThree, SampleFour };
+function SampleFive() {
+  const props = useSpring({
+    from: { opacity: 0, color: 'red' },
+    to: [
+      { opacity: 1, color: '#ffaaee' },
+      { opacity: 1, color: 'red' },
+      { opacity: 0.5, color: '#008000' },
+      { opacity: 0.8, color: 'black' },
+      { opacity: 0, color: 'grey' },
+    ]
+  });
+
+  return (
+    <animated.h1 style={props}>Hello World...</animated.h1>
+  );
+}
+
+export { SampleOne, SampleTwo, SampleThree, SampleFour, SampleFive };
