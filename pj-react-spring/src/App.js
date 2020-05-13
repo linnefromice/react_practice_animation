@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Keyframes } from "react-spring/renderprops";
+import { ReactComponent as GradientOne } from './gradient1.svg';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -49,7 +50,7 @@ function SampleSvgOne() {
 
 function App() {
   return (
-    <SampleSvgOne/>
+    <GradientOne/>
   );
 }
 
