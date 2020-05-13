@@ -77,8 +77,10 @@ function App() {
       config={{ duration: 10000 }}>
       {styles => (
         <div style={{ width: 800, height: 400, background: `linear-gradient(${styles.radians}deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>
-          <SampleOne/>
-          <SampleTwo/>
+          <center>
+            <SampleOne/>
+            <SampleTwo/>
+          </center>
         </div>
       )}
     </Container>
