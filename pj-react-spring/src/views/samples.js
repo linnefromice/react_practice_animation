@@ -70,4 +70,36 @@ function SampleFive() {
   );
 }
 
-export { SampleOne, SampleTwo, SampleThree, SampleFour, SampleFive };
+function SampleToggleOne() {
+  const [on, toggle] = useState(false);
+  const props = useSpring({
+    from: { xy: [0, 0], c: 'green' },
+    to: {
+      xy: on ? [400, 200] : [0, 0],
+      c: on ? 'red' : 'green',
+    }
+  });
+  
+  return (
+    <div>
+      <animated.h1
+        style={{
+          transform: props.xy.interpolate((x, y) => `translate(${x}px, ${y}px)`),
+          color: props.c.interpolate(c => c)
+        }}
+      >
+        { !on ? "I'm here" : "Now I'm over here" }
+      </animated.h1>
+      <button onClick={() => toggle(!on)}>Change</button>
+    </div>
+  );
+}
+
+export {
+  SampleOne,
+  SampleTwo,
+  SampleThree,
+  SampleFour,
+  SampleFive,
+  SampleToggleOne
+};
