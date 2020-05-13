@@ -28,4 +28,15 @@ function SampleTwo() {
   );
 }
 
-export { SampleOne, SampleTwo };
+function SampleThree() {
+  const props = useSpring({
+    from: { number: 0 },
+    to: { number: 10.0 }
+  });
+
+  return (
+    <animated.div>{props.number}</animated.div>
+  );
+}
+
+export { SampleOne, SampleTwo, SampleThree };

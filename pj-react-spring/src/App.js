@@ -3,7 +3,7 @@ import './App.css';
 import { useSpring, animated } from "react-spring";
 import { Keyframes } from "react-spring/renderprops";
 
-import { SampleOne, SampleTwo } from './views/samples';
+import { SampleOne, SampleTwo, SampleThree } from './views/samples';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -21,10 +21,6 @@ const Container = Keyframes.Spring(async next => {
 function _App() {
   const [on, toggle] = useState(false);
 
-  const propsThree = useSpring({
-    from: { number: 0 },
-    to: { number: 10.0 }
-  });
   const propsFour = useSpring({
     from: {opacity: 0, color: 'red'},
     to: async (next, cancel) => {
@@ -53,7 +49,6 @@ function _App() {
   return (
     <div style={{ background: `linear-gradient(180deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>
       <center>
-        <animated.div>{propsThree.number}</animated.div>
         <animated.div style={propsFour}>I Will Fade In</animated.div>
         <animated.h1 style={multiAnimation}>Hello World...</animated.h1>
         <div>
@@ -80,6 +75,7 @@ function App() {
           <center>
             <SampleOne/>
             <SampleTwo/>
+            <SampleThree/>
           </center>
         </div>
       )}
