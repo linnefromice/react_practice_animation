@@ -41,20 +41,20 @@ function SampleSvgThree() {
 const Container = Keyframes.Spring(async next => {
   while (true) {
     await next({
-      from: { start: 10, next: 10, end: 10 },
-      to: { start: 30, next: 30, end: 30 },
+      from: { start: 20, next: 20, end: 0 },
+      to: { start: 0, next: 0, end: 20 },
     })
     await next({
-      from: { start: 30, next: 30, end: 30 },
-      to: { start: 10, next: 10, end: 10 },
+      from: { start: 0, next: 0, end: 20 },
+      to: { start: 20, next: 20, end: 0 },
     })
     await next({
-      from: { start: 10, next: 10, end: 10 },
-      to: { start: 30, next: 30, end: 30 },
+      from: { start: 20, next: 20, end: 0 },
+      to: { start: -20, next: -20, end: 40 },
     })
     await next({
-      from: { start: 30, next: 30, end: 30 },
-      to: { start: 10, next: 10, end: 10 },
+      from: { start: -20, next: -20, end: 40 },
+      to: { start: 20, next: 20, end: 0 },
     })
   }
 })
@@ -68,7 +68,7 @@ function SampleSvgFour() {
       {styles => (
         <div style={{width: 500, height: 400, backgroundColor: "grey"}}>
           <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 80">
-            <path d={`M0 ${styles.start} C 15 20, 25 20, 40 ${styles.next} S 65 0, 80 ${styles.end}`} stroke="black" fill="transparent" />
+            <path d={`M0 10 C 15 ${styles.start}, 25 ${styles.next}, 40 10 S 65 ${styles.end}, 80 10`} stroke="black" fill="transparent" />
             <path d={`M0 40 C 15 50, 25 50, 40 40 S 65 30, 80 40`} stroke="black" fill="transparent" />
           </svg>
         </div>
