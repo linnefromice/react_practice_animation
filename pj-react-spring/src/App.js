@@ -3,7 +3,7 @@ import './App.css';
 import { useSpring, animated } from "react-spring";
 import { Keyframes } from "react-spring/renderprops";
 
-import SampleOne from './views/sample_one';
+import { SampleOne } from './views/samples';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -21,7 +21,6 @@ const Container = Keyframes.Spring(async next => {
 function _App() {
   const [on, toggle] = useState(false);
 
-  const propsOne = useSpring({opacity: 1, from: {opacity: 0}});
   const propsTwo = useSpring({
     width: 80,
     height: 80,
@@ -64,7 +63,6 @@ function _App() {
   return (
     <div style={{ background: `linear-gradient(180deg, rgba(4,56,0,1) 0%, rgba(2,247,104,1) 45%, rgba(230,252,223,1) 100%)`}}>
       <center>
-        <animated.h1 style={propsOne}>I Will Fade In</animated.h1>
         <animated.div style={propsTwo}>
           <div>Blue</div>
           <div>Circle</div>
@@ -88,7 +86,6 @@ function _App() {
 
 function App() {
   return (
-
     <Container
       reset
       config={{ duration: 10000 }}>

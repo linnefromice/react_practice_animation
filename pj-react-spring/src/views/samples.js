@@ -15,4 +15,4 @@ function SampleOne() {
   )
 }
 
-export default SampleOne;
+export { SampleOne };
