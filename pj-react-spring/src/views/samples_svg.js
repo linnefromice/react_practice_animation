@@ -77,6 +77,12 @@ function SampleSvgFour() {
           <circle cx="100" cy="100" r="100" fill="palegreen" stroke="green" />
         </svg>
       </div>
+      <div style={styles.svgWrapper}>
+        <svg mlns='http://www.w3.org/2000/svg' style={styles.svg} viewBox="0 0 80 50">
+          <path d="M0 10 C 15 20, 25 20, 40 10 S 65 0, 80 10" stroke="black" fill="transparent" />
+          <path d="M0 40 C 15 50, 25 50, 40 40 S 65 30, 80 40" stroke="black" fill="transparent" />
+        </svg>
+      </div>
     </div>
   )
 }
@@ -174,15 +180,33 @@ const Container = Keyframes.Spring(async next => {
   }
 })
 
+
 function SemiProdSvgOne() {
+  const root_style = {
+    contents: {
+      maxWidth: 800,
+      maxHeight: 600,
+      margin: "auto",
+      backgroundColor: "green"
+    },
+    svgWrapper: {
+      position: "relative",
+      width: "100%",
+      paddingTop: "100%",
+    },
+  }
+  
   return (
+    <div style={root_style.contents}>
+    <div style={root_style.svgWrapper}>
+
     <Container
       reset
       config={{ duration: 5000 }}
     >
       {styles => (
-        <div style={{width: 500, height: 400, background: "linear-gradient(to bottom, palegreen 0%, white 50%, palegreen 100%)"}}>
-          <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 80">
+        <div style={{position: "absolute", top: 0, left: 0, width: "100%", height: "75%", background: "linear-gradient(to bottom, palegreen 0%, white 50%, palegreen 100%)"}}>
+          <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 60">
             <defs>
               <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
                 <stop offset="0%" stopColor="lightgreen" />
@@ -201,6 +225,8 @@ function SemiProdSvgOne() {
         </div>
       )}
     </Container>
+    </div>
+    </div>
   )
 }
 
