@@ -38,6 +38,49 @@ function SampleSvgThree() {
   )
 }
 
+function SampleSvgFour() {
+  const styles = {
+    contents: {
+      maxWidth: "400px",
+      margin: "auto",
+      backgroundColor: "green"
+    },
+    svgWrapper: {
+      position: "relative",
+      width: "100%",
+      paddingTop: "100%",
+      backgroundColor: "blue"
+    },
+    svg: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "grey"
+    }
+  }
+
+  return (
+    <div style={styles.contents}>
+      <div style={styles.svgWrapper}>
+        <svg style={styles.svg} width="400" height="400" viewBox="0 0 200 200">
+          <circle cx="0" cy="0" r="100" fill="lightblue" stroke="blue" />
+          <circle cx="100" cy="100" r="100" fill="palegreen" stroke="green" />
+          <circle cx="200" cy="200" r="100" fill="lightcoral" stroke="red" />
+        </svg>
+      </div>
+      <div style={styles.svgWrapper}>
+        <svg style={styles.svg} width="400" height="400" viewBox="0 0 400 400">
+          <circle cx="0" cy="0" r="100" fill="lightblue" stroke="blue" />
+          <circle cx="200" cy="200" r="100" fill="lightcoral" stroke="red" />
+          <circle cx="100" cy="100" r="100" fill="palegreen" stroke="green" />
+        </svg>
+      </div>
+    </div>
+  )
+}
+
 const Container = Keyframes.Spring(async next => {
   while (true) {
     await next({
@@ -131,7 +174,7 @@ const Container = Keyframes.Spring(async next => {
   }
 })
 
-function SampleSvgFour() {
+function SemiProdSvgOne() {
   return (
     <Container
       reset
@@ -161,4 +204,4 @@ function SampleSvgFour() {
   )
 }
 
-export { SampleSvgOne, SampleSvgTwo, SampleSvgThree, SampleSvgFour };
+export { SampleSvgOne, SampleSvgTwo, SampleSvgThree, SampleSvgFour, SemiProdSvgOne };
