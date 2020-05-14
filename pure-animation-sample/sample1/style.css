@@ -1,0 +1,50 @@
+.wave1 {
+  animation: animate 30s linear infinite;
+  background-image: url("wave1.svg");
+}
+.wave2 {
+  animation: animate 15s linear infinite;
+  background-image: url("wave2.svg");
+}
+.wave3 {
+  animation: animate 5s linear infinite;
+  background-image: url("wave3.svg");
+}
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+.wave4 {
+  animation: animateTwo 30s linear infinite;
+  background-image: url("wave4.svg");
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55)
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+.wave5 {
+  animation: animateThree 5s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    background-position-x: 0;
+  }
+  50% {
+    background-position-x: 1000px;
+    transform: scaleX(1.2) scaleY(1.2) skew(30deg);
+  }
+  100% {
+    background-position-x: 0;
+  }
+}
