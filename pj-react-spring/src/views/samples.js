@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { Keyframes } from "react-spring/renderprops";
 
 function SampleOne() {
   const props = useSpring({
@@ -70,6 +71,54 @@ function SampleFive() {
   );
 }
 
+function SampleSix() {
+  const styles = {
+    main: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    box: {
+      width: 300,
+      height: 300,
+      borderRadius: 5,
+      backgroundColor: "red",
+      position: "relative",
+      overflow: "hidden",
+      transform: "translate3d(0, 0, 0)",
+    },
+    wave: {
+      opacity: 0.4,
+      position: "absolute",
+      top: "3%",
+      left: "50%",
+      background: "#0af",
+      width: "500px",
+      height: "500px",
+      marginLeft: "-250px",
+      marginTop: "-250px",
+      transformOrigin: "50% 48%",
+      borderRadius: "43%",
+    }
+  }
+
+  const container = Keyframes.Spring(async next => {
+    await next({
+      from: { transform: 'rotate("0deg")' },
+      to: { transform: 'rotate("360deg")' }
+    })
+  })
+
+  return (
+    <div style={styles.main}>
+      <div style={styles.box}>
+        <div style={styles.wave}></div>
+        <div>Capacities</div>
+      </div>
+    </div>
+  );
+}
+
 function SampleSvgOne() {
   const waveLinePath = "M0,0 v50 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-50 Z";
 
@@ -111,6 +160,7 @@ export {
   SampleThree,
   SampleFour,
   SampleFive,
+  SampleSix,
   SampleSvgOne,
   SampleToggleOne
 };

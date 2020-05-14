@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Keyframes } from "react-spring/renderprops";
 // import { ReactComponent as GradientOne } from './gradient1.svg';
+import { SampleSix } from './views/samples';
 import { SemiProdSvgOne } from './views/samples_svg';
 
 const Container = Keyframes.Spring(async next => {
@@ -35,7 +36,7 @@ function SampleBackGroundOne () {
 
 function App() {
   return (
-    <SemiProdSvgOne/>
+    <SampleSix/>
   );
 }
 
