@@ -202,7 +202,7 @@ function SemiProdSvgOne() {
 
     <Container
       reset
-      config={{ duration: 5000 }}
+      config={{ duration: 20000 }}
     >
       {styles => (
         <div style={{position: "absolute", top: 0, left: 0, width: "100%", height: "75%", background: "linear-gradient(to bottom, palegreen 0%, white 50%, palegreen 100%)"}}>
