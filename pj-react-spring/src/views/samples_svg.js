@@ -122,10 +122,10 @@ function SampleSvgFour() {
       config={{ duration: 5000 }}
     >
       {styles => (
-        <div style={{width: 500, height: 400, backgroundColor: "grey"}}>
+        <div style={{width: 500, height: 400, backgroundColor: "green"}}>
           <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 80">
-            <path d={`M0 10 C 15 ${styles.one_start}, 25 ${styles.one_next}, 40 10 S 65 ${styles.one_end}, 80 10`} stroke="black" fill="transparent" />
-            <path d={`M0 40 C 15 ${styles.two_start}, 25 ${styles.two_next}, 40 40 S 65 ${styles.two_end}, 80 40`} stroke="black" fill="transparent" />
+            <path fill="lightgreen" stroke="white" d={`M 0 0 L 0 10 C 15 ${styles.one_start}, 25 ${styles.one_next}, 40 10 S 65 ${styles.one_end}, 80 10 L 80 0`} />
+            <path fill="darkgreen" stroke="white" d={`M 0 65 L 0 40 C 15 ${styles.two_start}, 25 ${styles.two_next}, 40 40 S 65 ${styles.two_end}, 80 40 L 80 65`} />
           </svg>
         </div>
       )}
