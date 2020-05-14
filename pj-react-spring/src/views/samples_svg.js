@@ -45,17 +45,21 @@ const Container = Keyframes.Spring(async next => {
         one_start: 20,
         one_next: 20,
         one_end: 0,
+        one_offset: 50,
         two_start: 50,
         two_next: 50,
         two_end: 30,
+        two_offset: 50,
       },
       to: { 
         one_start: 0,
         one_next: 0,
         one_end: 20,
+        one_offset: 25,
         two_start: 30,
         two_next: 30,
         two_end: 50,
+        two_offset: 75,
       },
     })
     await next({
@@ -63,17 +67,21 @@ const Container = Keyframes.Spring(async next => {
         one_start: 0,
         one_next: 0,
         one_end: 20,
+        one_offset: 25,
         two_start: 30,
         two_next: 30,
         two_end: 50,
+        two_offset: 75,
       },
       to: { 
         one_start: 20,
         one_next: 20,
         one_end: 0,
+        one_offset: 50,
         two_start: 50,
         two_next: 50,
         two_end: 30,
+        two_offset: 50,
       },
     })
     await next({
@@ -81,17 +89,21 @@ const Container = Keyframes.Spring(async next => {
         one_start: 20,
         one_next: 20,
         one_end: 0,
+        one_offset: 50,
         two_start: 50,
         two_next: 50,
         two_end: 30,
+        two_offset: 50,
       },
       to: { 
         one_start: -20,
         one_next: -20,
         one_end: 40,
+        one_offset: 75,
         two_start: 10,
         two_next: 10,
         two_end: 70,
+        two_offset: 75,
       },
     })
     await next({
@@ -99,17 +111,21 @@ const Container = Keyframes.Spring(async next => {
         one_start: -20,
         one_next: -20,
         one_end: 40,
+        one_offset: 25,
         two_start: 10,
         two_next: 10,
         two_end: 70,
+        two_offset: 75,
       },
       to: { 
         one_start: 20,
         one_next: 20,
         one_end: 0,
+        one_offset: 50,
         two_start: 50,
         two_next: 50,
         two_end: 30,
+        two_offset: 50,
       },
     })
   }
@@ -122,10 +138,22 @@ function SampleSvgFour() {
       config={{ duration: 5000 }}
     >
       {styles => (
-        <div style={{width: 500, height: 400, backgroundColor: "green"}}>
+        <div style={{width: 500, height: 400, background: "linear-gradient(to bottom, palegreen 0%, white 50%, palegreen 100%)"}}>
           <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 80">
-            <path fill="lightgreen" stroke="white" d={`M 0 0 L 0 10 C 15 ${styles.one_start}, 25 ${styles.one_next}, 40 10 S 65 ${styles.one_end}, 80 10 L 80 0`} />
-            <path fill="darkgreen" stroke="white" d={`M 0 65 L 0 40 C 15 ${styles.two_start}, 25 ${styles.two_next}, 40 40 S 65 ${styles.two_end}, 80 40 L 80 65`} />
+            <defs>
+              <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="lightgreen" />
+                <stop offset={`${styles.one_offset}`} stopColor="palegreen" />
+                <stop offset="100%" stopColor="white" />
+              </linearGradient>
+              <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="white" />
+                <stop offset={`${styles.two_offset}`} stopColor="palegreen" />
+                <stop offset="100%" stopColor="lightgreen" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#Gradient1)" stroke="none" d={`M 0 0 L 0 10 C 15 ${styles.one_start}, 25 ${styles.one_next}, 40 10 S 65 ${styles.one_end}, 80 10 L 80 0`} />
+            <path fill="url(#Gradient2)" stroke="none" d={`M 0 65 L 0 40 C 15 ${styles.two_start}, 25 ${styles.two_next}, 40 40 S 65 ${styles.two_end}, 80 40 L 80 65`} />
           </svg>
         </div>
       )}
