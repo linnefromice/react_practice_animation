@@ -41,20 +41,76 @@ function SampleSvgThree() {
 const Container = Keyframes.Spring(async next => {
   while (true) {
     await next({
-      from: { start: 20, next: 20, end: 0 },
-      to: { start: 0, next: 0, end: 20 },
+      from: { 
+        one_start: 20,
+        one_next: 20,
+        one_end: 0,
+        two_start: 50,
+        two_next: 50,
+        two_end: 30,
+      },
+      to: { 
+        one_start: 0,
+        one_next: 0,
+        one_end: 20,
+        two_start: 30,
+        two_next: 30,
+        two_end: 50,
+      },
     })
     await next({
-      from: { start: 0, next: 0, end: 20 },
-      to: { start: 20, next: 20, end: 0 },
+      from: { 
+        one_start: 0,
+        one_next: 0,
+        one_end: 20,
+        two_start: 30,
+        two_next: 30,
+        two_end: 50,
+      },
+      to: { 
+        one_start: 20,
+        one_next: 20,
+        one_end: 0,
+        two_start: 50,
+        two_next: 50,
+        two_end: 30,
+      },
     })
     await next({
-      from: { start: 20, next: 20, end: 0 },
-      to: { start: -20, next: -20, end: 40 },
+      from: { 
+        one_start: 20,
+        one_next: 20,
+        one_end: 0,
+        two_start: 50,
+        two_next: 50,
+        two_end: 30,
+      },
+      to: { 
+        one_start: -20,
+        one_next: -20,
+        one_end: 40,
+        two_start: 10,
+        two_next: 10,
+        two_end: 70,
+      },
     })
     await next({
-      from: { start: -20, next: -20, end: 40 },
-      to: { start: 20, next: 20, end: 0 },
+      from: { 
+        one_start: -20,
+        one_next: -20,
+        one_end: 40,
+        two_start: 10,
+        two_next: 10,
+        two_end: 70,
+      },
+      to: { 
+        one_start: 20,
+        one_next: 20,
+        one_end: 0,
+        two_start: 50,
+        two_next: 50,
+        two_end: 30,
+      },
     })
   }
 })
@@ -68,8 +124,8 @@ function SampleSvgFour() {
       {styles => (
         <div style={{width: 500, height: 400, backgroundColor: "grey"}}>
           <svg mlns='http://www.w3.org/2000/svg' viewBox="0 0 80 80">
-            <path d={`M0 10 C 15 ${styles.start}, 25 ${styles.next}, 40 10 S 65 ${styles.end}, 80 10`} stroke="black" fill="transparent" />
-            <path d={`M0 40 C 15 50, 25 50, 40 40 S 65 30, 80 40`} stroke="black" fill="transparent" />
+            <path d={`M0 10 C 15 ${styles.one_start}, 25 ${styles.one_next}, 40 10 S 65 ${styles.one_end}, 80 10`} stroke="black" fill="transparent" />
+            <path d={`M0 40 C 15 ${styles.two_start}, 25 ${styles.two_next}, 40 40 S 65 ${styles.two_end}, 80 40`} stroke="black" fill="transparent" />
           </svg>
         </div>
       )}
