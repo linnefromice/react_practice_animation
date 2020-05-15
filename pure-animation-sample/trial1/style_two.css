@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  justify-content: center;
+  align-items: center;
+}
+.base {
+  width: 720px;
+  height: 320px;
+  overflow: hidden;
+}
+.svgOne {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.svgOne > img {
+  width: 200%;
+  opacity: 0.75;
+  background-color: #e3fbe3;
+  animation: animate 20s linear infinite alternate;
+}
+.svgTwo {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.svgTwo > img {
+  width: 200%;
+  opacity: 0.50;
+  background-color: #e3fbe3;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-12.5%) rotateX(10deg);
+  }
+  50% {
+    transform: translateX(-25%) rotateX(20deg);
+  }
+  25% {
+    transform: translateX(-37.5%) rotateX(10deg);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
