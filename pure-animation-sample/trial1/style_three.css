@@ -17,7 +17,27 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  background: linear-gradient(-45deg, grey, black);
+  background: linear-gradient(-45deg, grey, dimgrey);
+}
+.left_button {
+  width: 20%;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  padding-right: 10px;
+}
+.left_button > img {
+  size: cover;
+}
+.right_button {
+  width: 20%;
+  height: 100%;  
+  right: 0;
+  overflow: hidden;
+  padding-left: 10px;
+}
+.right_button > img {
+  size: cover;
 }
 .screen {
   width: 960px; /* 480px */
