@@ -15,36 +15,52 @@ body {
   width: 100vw;
   height: auto;
   min-height: 100vh;
+  background: linear-gradient(-45deg, grey, dimgrey);
   background-size: cover;
   background-position: center;
-  background: linear-gradient(-45deg, grey, dimgrey);
 }
 .left_button {
-  width: 20%;
-  height: 100%;
+  width: 20vw;
+  height: 100vh;
   left: 0;
   overflow: hidden;
-  padding-right: 10px;
+  margin-right: 5vw;
+  background: url(./button_left.svg);
+  background-position: right;
+  background-size: 150% 150%;
+  background-repeat: no-repeat;
 }
+/*
 .left_button > img {
-  size: cover;
-}
-.right_button {
-  width: 20%;
-  height: 100%;  
   right: 0;
   overflow: hidden;
-  padding-left: 10px;
 }
+*/
+.right_button {
+  width: 20vw;
+  height: 100vh;
+  right: 0;
+  overflow: hidden;
+  margin-left: 5vw;
+  background: url(./button_right.svg);
+  background-position: left;
+  background-size: 150% 150%;
+  background-repeat: no-repeat;
+}
+/*
 .right_button > img {
-  size: cover;
+  left: 0;
+  overflow: hidden;
 }
+*/
 .screen {
-  width: 960px; /* 480px */
-  height: 542px; /* 272px */
+  min-width: 480px;
+  min-height: 272px;
+  width: 80vw; /* 480px */
+  height: 80vh; /* 272px */
   border-radius: 5rem;
   background-color: #e3fbe3;
-  box-shadow: 4px 4px 6px gray;
+  box-shadow: 4px 4px 10px black;
 }
 .screen > .back1 {
   width: 100%;
