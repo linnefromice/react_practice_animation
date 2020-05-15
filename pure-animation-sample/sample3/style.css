@@ -38,12 +38,21 @@
 .waveTop {
   background-image: url(wave-top.png);
   background-size: 50% 100px;
+  animation: move_wave 5s;
+  animation-delay: 1s;
 }
 .waveMiddle {
   background-image: url(wave-mid.png);
   background-size: 50% 120px;
+  animation: move_wave 10s linear infinite;
 }
 .waveBottom {
   background-image: url(wave-bot.png);
-  background-size: 50% 100px;
+  background-size: 50% 110px;
+  animation: move_wave 15s linear infinite;
+}
+@keyframes move_wave {
+  0% { transform: translateX(0) translateZ(0) scaleY(1) }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.55) }
+  100% { transform: translateX(-50%) translateZ() scaleY(1) }
 }
