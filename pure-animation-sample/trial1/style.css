@@ -14,3 +14,7 @@
     transform: translateX(-50%);
   }
 }
+
+.base {
+  width: 800;
+}
