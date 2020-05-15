@@ -38,13 +38,10 @@
 }
 @keyframes animateThree {
   0% {
-    background-position-x: 0;
   }
   50% {
-    background-position-x: 1000px;
     transform: scaleX(1.2) scaleY(1.2) skew(30deg);
   }
   100% {
-    background-position-x: 0;
   }
 }
