@@ -31,7 +31,7 @@ body {
   width: 200%;
   opacity: 0.50;
   background-color: #e3fbe3;
-  animation: animate 60s linear infinite;
+  animation: animate 60s linear infinite alternate;
 }
 
 @keyframes animate {
