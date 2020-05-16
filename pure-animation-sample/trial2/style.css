@@ -49,44 +49,34 @@ body {
   background-color: #e3fbe3;
   box-shadow: 4px 4px 10px black;
 }
-.screen > .back1 {
+.screen > .back_stream_top {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   opacity: 0.50;
   border-radius: 5rem;
-  background-image: url(./wave_one_for_three.svg);
+  background-image: url(stream_top.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  animation: animate 20s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
+  animation: animate_stream 20s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
 }
-.screen > .back1 > .back2 {
+.screen > .back_stream_top > .back_stream_bottom {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   opacity: 0.25;
   border-radius: 5rem;
-  background-image: url(./wave_two_for_three.svg);
+  background-image: url(stream_bottom.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  animation: animate 60s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
+  animation: animate_stream 60s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
 }
-@keyframes animate {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 25% 0;
-  }
-  50% {
-    background-position: 50% 0;
-  }
-  25% {
-    background-position: 75% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+@keyframes animate_stream {
+  0% { background-position: 0 0; }
+  25% { background-position: 25% 0; }
+  50% { background-position: 50% 0; }
+  75% { background-position: 75% 0; }
+  100% { background-position: 100% 0; }
 }
