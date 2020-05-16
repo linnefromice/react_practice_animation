@@ -1,7 +1,6 @@
 body {
   margin: 0;
 }
-
 .page {
   height: 100vh;
 }
@@ -25,34 +24,22 @@ body {
   left: 0;
   overflow: hidden;
   margin-right: 5vw;
-  background: url(./button_left.svg);
+  background: url(button_left.svg);
   background-position: right;
   background-size: 150% 150%;
   background-repeat: no-repeat;
 }
-/*
-.left_button > img {
-  right: 0;
-  overflow: hidden;
-}
-*/
 .right_button {
   width: 20vw;
   height: 100vh;
   right: 0;
   overflow: hidden;
   margin-left: 5vw;
-  background: url(./button_right.svg);
+  background: url(button_right.svg);
   background-position: left;
   background-size: 150% 150%;
   background-repeat: no-repeat;
 }
-/*
-.right_button > img {
-  left: 0;
-  overflow: hidden;
-}
-*/
 .screen {
   min-width: 480px;
   min-height: 272px;
@@ -72,7 +59,7 @@ body {
   background-image: url(./wave_one_for_three.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  animation: animate 20s linear infinite alternate;
+  animation: animate 20s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
 }
 .screen > .back1 > .back2 {
   width: 100%;
@@ -84,7 +71,7 @@ body {
   background-image: url(./wave_two_for_three.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  animation: animate 60s linear infinite alternate;
+  animation: animate 60s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
 }
 @keyframes animate {
   0% {
