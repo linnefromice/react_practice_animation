@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaCode, FaLink, FaGithub,  } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine, RiVuejsLine } from 'react-icons/ri';
+import './samples_react_icons.scss';
 
 function SampleAccountMenu() {
   return(
@@ -52,16 +53,25 @@ function SampleSelectMainMenu() {
     <FaLink size="200px"/>,
   ];
 
+  const iconNameList = [
+    "Account Information",
+    "Product(private)",
+    "Links",
+  ];
+
   return(
-    <div>
-      {iconList.map(tag => {
-        return (
-          <span>{tag}</span>
-        );
-      })}
+    <div className="wrapper">
+    <div className="dummyScreen">
+      <div className="wrapperMainMenu">
+        {iconList.map(tag => {
+          return (
+            <div>{tag}</div>
+          );
+        })}
+      </div>
+    </div>
     </div>
   )
-
 }
 
 export {
