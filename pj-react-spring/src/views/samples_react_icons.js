@@ -46,6 +46,7 @@ function SampleMainMenu() {
 
 function SampleSelectMainMenu() {
   const [focusedMenuIndex, setFocusedMenuIndex] = useState(0);
+  const [focusedSubMenuIndex, setFocusedSubMenuIndex] = useState(0);
 
   const iconList = [
     <MdAccountCircle size="100%"/>,
@@ -59,6 +60,52 @@ function SampleSelectMainMenu() {
     "Links",
   ];
 
+  const accountMenuList = [
+    <RiProfileLine size="100%"/>,
+    <MdWork size="100%"/>,
+    <MdFreeBreakfast size="100%"/>,
+  ];
+
+  const accountMenuNameList = [
+    "Profile",
+    "Work Experience",
+    "Hobby",
+  ];
+
+  const productMenuList = [
+    <RiFlutterLine size="100%"/>,
+    <RiFlutterLine size="100%"/>,
+    <RiFlutterLine size="100%"/>,
+    <RiVuejsLine size="100%"/>,
+  ];
+
+  const productMenuNameList = [
+    "flutter / study_record_app",
+    "flutter / ff_quiz_app",
+    "flutter / marvel_data_app",
+    "vue / vuetify_news_app",
+  ];
+
+  const linkMenuList = [
+    <FaGithub size="100px"/>
+  ];
+
+  const linkMenuNameList = [
+    "Github",
+  ];
+
+  const subMenuList = [
+    accountMenuList,
+    productMenuList,
+    linkMenuList,
+  ]
+
+  const subMenuNameList = [
+    accountMenuNameList,
+    productMenuNameList,
+    linkMenuNameList,
+  ]
+
   return(
     <div className="wrapper">
     <div className="dummyScreen">
@@ -68,7 +115,10 @@ function SampleSelectMainMenu() {
             <div
               key={`mainMenu.${index}`}
               className="mainMenu"
-              onClick={() => setFocusedMenuIndex(index)}
+              onClick={() => {
+                setFocusedMenuIndex(index);
+                setFocusedSubMenuIndex(0);
+              }}
             >
               {value}
             </div>
@@ -81,7 +131,30 @@ function SampleSelectMainMenu() {
         left: "0",
         width: "100%",
         height: "20%",
-      }}>{iconNameList[focusedMenuIndex]}</h1>
+      }}>
+        {iconNameList[focusedMenuIndex]}
+      </h1>
+      <div className="wrapperSubMenu">
+        {subMenuList[focusedMenuIndex].map((value, index) => {
+          return (
+            <div
+              key={`SubMenu.${index}`}
+              className="subMenu"
+              onClick={() => setFocusedSubMenuIndex(index)}
+            >
+              {value}
+            </div>
+          );
+        })}
+      </div>
+      <h1 style={{
+        position: "absolute",
+        top: "50%",
+        left: "20%",
+        height: "20%",
+      }}>
+        {subMenuNameList[focusedMenuIndex][focusedSubMenuIndex]}
+      </h1>
     </div>
     </div>
   )
