@@ -2,8 +2,14 @@ import React from 'react';
 import './App.css';
 import { Keyframes } from "react-spring/renderprops";
 // import { ReactComponent as GradientOne } from './gradient1.svg';
-import { SampleSix } from './views/samples';
-import { SemiProdSvgOne } from './views/samples_svg';
+// import { SampleSix } from './views/samples';
+// import { SemiProdSvgOne } from './views/samples_svg';
+import {
+  SampleAccountMenu,
+  SampleProductMenu,
+  SampleLinkMenu,
+  SampleMainMenu
+} from '././views/samples_react_icons';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -36,7 +42,16 @@ function SampleBackGroundOne () {
 
 function App() {
   return (
-    <SampleSix/>
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }}>
+      <SampleMainMenu/>
+      <SampleAccountMenu/>
+      <SampleProductMenu/>
+      <SampleLinkMenu/>
+    </div>
   );
 }
 
