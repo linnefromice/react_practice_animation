@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { IconContext } from 'react-icons';
 import { FaCode, FaLink, FaGithub,  } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
@@ -43,9 +43,31 @@ function SampleMainMenu() {
   )
 }
 
+function SampleSelectMainMenu() {
+  const [focusedMenuIndex, setFocusedMenuIndex] = useState(0);
+
+  const iconList = [
+    <MdAccountCircle size="200px"/>,
+    <FaCode size="200px"/>,
+    <FaLink size="200px"/>,
+  ];
+
+  return(
+    <div>
+      {iconList.map(tag => {
+        return (
+          <span>{tag}</span>
+        );
+      })}
+    </div>
+  )
+
+}
+
 export {
   SampleAccountMenu,
   SampleProductMenu,
   SampleLinkMenu,
-  SampleMainMenu
+  SampleMainMenu,
+  SampleSelectMainMenu
 }

@@ -5,10 +5,7 @@ import { Keyframes } from "react-spring/renderprops";
 // import { SampleSix } from './views/samples';
 // import { SemiProdSvgOne } from './views/samples_svg';
 import {
-  SampleAccountMenu,
-  SampleProductMenu,
-  SampleLinkMenu,
-  SampleMainMenu
+  SampleSelectMainMenu
 } from '././views/samples_react_icons';
 
 const Container = Keyframes.Spring(async next => {
@@ -47,10 +44,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleMainMenu/>
-      <SampleAccountMenu/>
-      <SampleProductMenu/>
-      <SampleLinkMenu/>
+      <SampleSelectMainMenu/>
     </div>
   );
 }
