@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { IconContext } from 'react-icons';
+import { IconContext } from 'react-icons';
 import { FaCode, FaLink, FaGithub,  } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine, RiVuejsLine } from 'react-icons/ri';
@@ -48,9 +48,9 @@ function SampleSelectMainMenu() {
   const [focusedMenuIndex, setFocusedMenuIndex] = useState(0);
 
   const iconList = [
-    <MdAccountCircle size="200px"/>,
-    <FaCode size="200px"/>,
-    <FaLink size="200px"/>,
+    <MdAccountCircle size="100%"/>,
+    <FaCode size="100%"/>,
+    <FaLink size="100%"/>,
   ];
 
   const iconNameList = [
@@ -63,12 +63,25 @@ function SampleSelectMainMenu() {
     <div className="wrapper">
     <div className="dummyScreen">
       <div className="wrapperMainMenu">
-        {iconList.map(tag => {
+        {iconList.map((value, index) => {
           return (
-            <div>{tag}</div>
+            <div
+              key={`mainMenu.${index}`}
+              className="mainMenu"
+              onClick={() => setFocusedMenuIndex(index)}
+            >
+              {value}
+            </div>
           );
         })}
       </div>
+      <h1 style={{
+        position: "absolute",
+        top: "30%",
+        left: "0",
+        width: "100%",
+        height: "20%",
+      }}>{iconNameList[focusedMenuIndex]}</h1>
     </div>
     </div>
   )
