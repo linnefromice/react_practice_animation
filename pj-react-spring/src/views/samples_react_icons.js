@@ -62,8 +62,8 @@ function SampleSelectMainMenu() {
 
   const accountMenuList = [
     <RiProfileLine size="100%"/>,
-    <MdWork size="100%"/>,
-    <MdFreeBreakfast size="100%"/>,
+    <MdWork size="100%" color="brown"/>,
+    <MdFreeBreakfast size="100%" color="white"/>,
   ];
 
   const accountMenuNameList = [
@@ -73,10 +73,10 @@ function SampleSelectMainMenu() {
   ];
 
   const productMenuList = [
-    <RiFlutterLine size="100%"/>,
-    <RiFlutterLine size="100%"/>,
-    <RiFlutterLine size="100%"/>,
-    <RiVuejsLine size="100%"/>,
+    <RiFlutterLine size="100%" color="skyblue"/>,
+    <RiFlutterLine size="100%" color="skyblue"/>,
+    <RiFlutterLine size="100%" color="skyblue"/>,
+    <RiVuejsLine size="100%" color="lightgreen"/>,
   ];
 
   const productMenuNameList = [
@@ -87,7 +87,7 @@ function SampleSelectMainMenu() {
   ];
 
   const linkMenuList = [
-    <FaGithub size="100px"/>
+    <FaGithub size="100%" color="white"/>
   ];
 
   const linkMenuNameList = [
