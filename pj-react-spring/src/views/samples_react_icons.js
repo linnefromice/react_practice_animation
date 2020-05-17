@@ -131,6 +131,7 @@ function SampleSelectMainMenu() {
         left: "0",
         width: "100%",
         height: "20%",
+        backgroundColor: "green",
       }}>
         {iconNameList[focusedMenuIndex]}
       </h1>
@@ -152,6 +153,7 @@ function SampleSelectMainMenu() {
         top: "50%",
         left: "20%",
         height: "20%",
+        backgroundColor: "green",
       }}>
         {subMenuNameList[focusedMenuIndex][focusedSubMenuIndex]}
       </h1>

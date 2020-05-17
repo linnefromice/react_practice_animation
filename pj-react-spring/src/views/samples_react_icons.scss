@@ -14,30 +14,35 @@
 }
 .wrapperMainMenu {
   position: absolute;
-  top: 5%;
+  top: 1vh; // 5%
   left: 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 100%;
-  height: 20%;
+  width: 80vw; // 100%
+  height: 20vh; // 20%
+  background-color: gray;
 }
-.mainMenu {
-  padding: 1%;
-  height: 100%;
-  width: 15%;
+.wrapperMainMenu > .mainMenu {
+  position: relative;
+  padding: 1%; // 1%
+  height: 16vh; // 100%
+  width: 16vw; // 15%
 }
 .wrapperSubMenu {
   position: absolute;
-  top: 40%;
-  left: 0;
+  top: 32vh; // 40%
+  left: 5vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 30%;
-  height: 50%;
+  width: 8vw; // 30%
+  height: 40vh; // 50%
+  background-color: gray;
 }
 .subMenu {
-  padding: 1%;
-  width: 30%;
+  position: relative;
+  padding: 1%; // 1%
+  width: 8vw; // 30%
+  
 }
