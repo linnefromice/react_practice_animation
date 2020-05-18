@@ -4,16 +4,17 @@ import { Keyframes } from "react-spring/renderprops";
 // import { ReactComponent as GradientOne } from './gradient1.svg';
 // import { SampleSix } from './views/samples';
 // import { SemiProdSvgOne } from './views/samples_svg';
+/*
 import {
   SampleSelectMainMenu
 } from './views/samples_react_icons';
 import {
-  SampleOne,
-  SampleTwo,
-  SampleThree,
-  SampleFour,
   SampleCustomOne,
 } from './views/samples_two.js';
+*/
+import {
+  SampleOne
+} from './views/samples_three';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -51,7 +52,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleFour/>
+      <SampleOne/>
     </div>
   );
 }
