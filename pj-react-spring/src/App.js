@@ -6,7 +6,10 @@ import { Keyframes } from "react-spring/renderprops";
 // import { SemiProdSvgOne } from './views/samples_svg';
 import {
   SampleSelectMainMenu
-} from '././views/samples_react_icons';
+} from './views/samples_react_icons';
+import {
+  SampleTransitionOne
+} from './views/samples_two.js';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -44,7 +47,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleSelectMainMenu/>
+      <SampleTransitionOne/>
     </div>
   );
 }

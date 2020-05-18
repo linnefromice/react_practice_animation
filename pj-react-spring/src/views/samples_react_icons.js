@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconContext } from 'react-icons';
+// import { IconContext } from 'react-icons';
 import { FaCode, FaLink, FaGithub,  } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine, RiVuejsLine } from 'react-icons/ri';
