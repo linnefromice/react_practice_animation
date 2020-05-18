@@ -1,7 +1,7 @@
 // https://alligator.io/react/advanced-react-spring/
 
-import React, { useState } from 'react';
-import { animated, useTransition, useSprings, useTrail } from 'react-spring';
+import React, { useState, useRef } from 'react';
+import { animated, useTransition, useSpring, useSprings, useTrail, useChain } from 'react-spring';
 
 const SampleOne = () => {
   const [on, toggle] = useState(false);
@@ -105,7 +105,7 @@ const SampleThree = () => {
   const [on, toggle] = useState(false);
   const springs = useTrail(5, {
     to: { opacity: on ? 1 : 0},
-    config: { tension: 250 }
+    config: { tension: 200 }
   });
 
   return (
@@ -123,9 +123,41 @@ const SampleThree = () => {
   );
 }
 
+const SampleFour = () => {
+  const [on, toggle] = useState(false);
+  const springRef = useRef();
+  const spring = useSpring({
+    ref: springRef,
+    from: { opacity: .5 },
+    to: { opacity: on ? 1 : .5 },
+    config: { tension: 250 }
+  });
+
+  const trailRef = useRef();
+  const trail = useTrail(5, {
+    ref: trailRef,
+    from: { fontSize: '10px' },
+    to: { fontSize: on ? '45px' : '10px' }
+  });
+
+  useChain(on ? [springRef, trailRef] : [trailRef, springRef]);
+
+  return(
+    <div>
+      {trail.map((animation, index) => (
+        <animated.h1 style={{ ...animation, ...spring }} key={index}>
+          Hello World
+        </animated.h1>
+      ))}
+      <button onClick={() => toggle(!on)}>Change</button>
+    </div>
+  );
+}
+
 export {
   SampleOne,
   SampleCustomOne,
   SampleTwo,
-  SampleThree
+  SampleThree,
+  SampleFour
 };

@@ -11,6 +11,7 @@ import {
   SampleOne,
   SampleTwo,
   SampleThree,
+  SampleFour,
   SampleCustomOne,
 } from './views/samples_two.js';
 
@@ -50,7 +51,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleCustomOne/>
+      <SampleFour/>
     </div>
   );
 }
