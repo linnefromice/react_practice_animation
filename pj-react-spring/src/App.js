@@ -8,7 +8,7 @@ import {
   SampleSelectMainMenu
 } from './views/samples_react_icons';
 import {
-  SampleTransitionOne
+  SampleTwo
 } from './views/samples_two.js';
 
 const Container = Keyframes.Spring(async next => {
@@ -47,7 +47,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleTransitionOne/>
+      <SampleTwo/>
     </div>
   );
 }
