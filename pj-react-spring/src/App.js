@@ -16,7 +16,8 @@ import {
 } from './views/samples_three';
 */
 // import Sample from './views/samples_four/sample_usespring';
-import Sample from './views/samples_four/sample_usetrail';
+// import Sample from './views/samples_four/sample_usetrail';
+import Sample from './views/samples_four/sample_renderpropsapi';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
