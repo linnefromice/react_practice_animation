@@ -15,7 +15,8 @@ import {
 import {
   Translate,
   BarGraph,
-  StaggeredBars
+  StaggeredBars,
+  DisappearingComponent
 } from './views/samples_three';
 
 const Container = Keyframes.Spring(async next => {
@@ -54,7 +55,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <StaggeredBars/>
+      <DisappearingComponent/>
     </div>
   );
 }

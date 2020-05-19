@@ -1,7 +1,7 @@
 // https://pakatagoh.com/blog/getting-started-with-react-spring
 
-import React from 'react';
-import { animated, useSpring, useSprings, useTrail } from 'react-spring';
+import React, { useState } from 'react';
+import { animated, useSpring, useSprings, useTrail, useTransition } from 'react-spring';
 
 const Translate = () => {
   const spring = useSpring({
@@ -87,4 +87,32 @@ const StaggeredBars = () => {
   );
 }
 
-export { Translate, BarGraph, StaggeredBars }
+const DisappearingComponent = () => {
+  const [isDisplay, setIsDisplay] = useState(true);
+  const transitions = useTransition(isDisplay, null, {
+    from: { transform: `translateX(50px)`, opacity: 0 },
+    enter: { transform: `translateX(0px)`, opacity: 1 },
+    leave: { transform: `translateX(50px)`, opactity: 0},
+  });
+
+  return (
+    <>
+      <div style={{ width: '50px', height: '20px' }}>
+        {transitions.map(({ item, key, props }) => (
+          item
+          &&
+          (
+            <animated.div key={key} style={{ ...props, display: 'inline-block' }}>
+              Yo
+            </animated.div>
+          )
+        ))}
+      </div>
+      <button onClick={() => setIsDisplay(prevState => !prevState)}>
+        Click
+      </button>
+    </>
+  )
+}
+
+export { Translate, BarGraph, StaggeredBars, DisappearingComponent }
