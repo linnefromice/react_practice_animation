@@ -13,7 +13,8 @@ import {
 } from './views/samples_two.js';
 */
 import {
-  SampleOne
+  Translate,
+  BarGraph,
 } from './views/samples_three';
 
 const Container = Keyframes.Spring(async next => {
@@ -52,7 +53,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <SampleOne/>
+      <BarGraph/>
     </div>
   );
 }

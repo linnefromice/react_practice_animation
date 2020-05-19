@@ -1,9 +1,9 @@
 // https://pakatagoh.com/blog/getting-started-with-react-spring
 
 import React from 'react';
-import { animated, useSpring } from 'react-spring';
+import { animated, useSpring, useSprings } from 'react-spring';
 
-const SampleOne = () => {
+const Translate = () => {
   const spring = useSpring({
     from: { myXTranslateValue: 0 },
     to: { myXTranslateValue: 120 },
@@ -22,4 +22,44 @@ const SampleOne = () => {
   );
 }
 
-export { SampleOne }
+const BarGraph = () => {
+  const bars = [
+    {
+      key: 'bar1', color: 'green',
+      from: { width: '0px' },
+      to: { width: '100px' },
+      config: { mass: 20 }
+    },
+    {
+      key: 'bar2', color: 'blue',
+      from: { width: '0px' },
+      to: { width: '250px' },
+      config: { mass: 30 },
+    },
+    {
+      key: 'bar3', color: 'red',
+      from: { width: '0px' },
+      to: { width: '150px' },
+      config: { mass: 13 },
+    },
+  ];
+
+  const springs = useSprings(
+    bars.length,
+    bars.map(({ color, key, ...config }) => config)
+  );
+
+  return springs.map((spring, index) => (
+    <animated.div
+      key={bars[index].key}
+      style={{
+        ...spring,
+        height: '20px',
+        marginBottom: '10px',
+        backgroundColor: bars[index].color,
+      }}
+    />
+  ));
+}
+
+export { Translate, BarGraph }
