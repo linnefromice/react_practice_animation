@@ -1,7 +1,7 @@
 // https://pakatagoh.com/blog/getting-started-with-react-spring
 
 import React from 'react';
-import { animated, useSpring, useSprings } from 'react-spring';
+import { animated, useSpring, useSprings, useTrail } from 'react-spring';
 
 const Translate = () => {
   const spring = useSpring({
@@ -62,4 +62,29 @@ const BarGraph = () => {
   ));
 }
 
-export { Translate, BarGraph }
+const StaggeredBars = () => {
+  const colors = ['red', 'green', 'blue', 'orange', 'purple', 'yellow'];
+  const trailSprings = useTrail(colors.length, {
+    from: { height: '0px' },
+    to: { height: '80px' }
+  });
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'flex-end', height: '500px' }}>
+      {trailSprings.map((spring, index) => (
+        <animated.div
+          key={colors[index]}
+          style={{
+            ...spring,
+            width: '20px',
+            marginRight: '10px',
+            transformOrigin: 'bottom',
+            backgroundColor: colors[index],
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export { Translate, BarGraph, StaggeredBars }
