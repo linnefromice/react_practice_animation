@@ -17,3 +17,18 @@ useSpring
 .button {
   background: #4e4d4d;
 }
+.Intro {
+  font-size: 20px;
+}
+.box {
+  width: 300px;
+}
+.box > h1 {
+  font-size: 20px;
+  margin: 0 0 1rem 0;
+  padding-top: 15px;
+  text-align: center;
+  border-radius: 5px;
+  height: 100px;
+  background-color: gray;
+}
