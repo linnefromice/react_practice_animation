@@ -11,14 +11,11 @@ import {
 import {
   SampleCustomOne,
 } from './views/samples_two.js';
-*/
 import {
-  Translate,
-  BarGraph,
-  StaggeredBars,
-  DisappearingComponent,
   TranslateStaggersBars
 } from './views/samples_three';
+*/
+import Sample from './views/samples_four/sample_usespring';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
@@ -56,7 +53,7 @@ function App() {
       alignItems: "center",
       justifyContent: "center"
     }}>
-      <TranslateStaggersBars/>
+      <Sample/>
     </div>
   );
 }

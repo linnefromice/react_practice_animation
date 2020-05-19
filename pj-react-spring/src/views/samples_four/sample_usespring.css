@@ -1,0 +1,19 @@
+/*
+https://blog.logrocket.com/animations-with-react-spring/
+useSpring
+*/
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a9a9a9;
+}
+.button-container {
+  position: absolute;
+  bottom: 0;
+}
+.button {
+  background: #4e4d4d;
+}
