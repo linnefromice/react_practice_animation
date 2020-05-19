@@ -15,7 +15,8 @@ import {
   TranslateStaggersBars
 } from './views/samples_three';
 */
-import Sample from './views/samples_four/sample_usespring';
+// import Sample from './views/samples_four/sample_usespring';
+import Sample from './views/samples_four/sample_usetrail';
 
 const Container = Keyframes.Spring(async next => {
   while (true) {
